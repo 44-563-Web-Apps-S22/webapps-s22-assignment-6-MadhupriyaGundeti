@@ -17,6 +17,9 @@
 </form>
 
 
+
+
+
 <p id="result"> text will be replaced </p>
 
 <script> 
@@ -27,8 +30,6 @@ function checkGuess(){
     console.log("Getting form values")
     Name= document.getElementById("form1_name").value
     Guess= document.getElementById("form1_guess").value
-    
-    
     out = document.getElementById("result")
     if(Name==Guess){
         correct=correct+1;
@@ -41,6 +42,26 @@ function checkGuess(){
     }
 }
 </script>
+<div class="container">
+<img src="geese.jpg" id="image" class="img-fluid" alt="Geese" height="100" width="100" onclick="swapImage()">
+<script>
+let useImage = 1
+function swapImage(){
+    switch(useImage){
+        case 1 : document.getElementById("image").src = "geese.jpg"
+                useImage=2
+                break; 
+        case 2 : document.getElementById('image').src = "dove.jpg"
+                useImage=3
+                break;
+        case 3 : document.getElementById("image").src = "teal.jpg"
+                useImage=1
+                break;
+        default : break;
+    }
+}
+</script>
+</div>
 
 </body>
 </html> 
